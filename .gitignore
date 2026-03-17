@@ -5,3 +5,5 @@ build
 backend/node_modules
 LevitoNest/node_modules
 LevitoNest/dist
+LevitoNest/.vite
+*.db
