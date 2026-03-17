@@ -1,3 +1,5 @@
+
+// Navbar: responsive navigation with authentication state and route handling
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -74,6 +76,7 @@ const Navbar = ({ onGetStarted }) => {
       </div>
 
       {/* Mobile Menu */}
+
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div 
