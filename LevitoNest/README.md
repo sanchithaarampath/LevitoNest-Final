@@ -14,3 +14,24 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+# LevitoNest
+
+Interior design web application with a 2D furniture planner and real-time 3D room visualization.
+
+## Tech Stack
+- Frontend: React, Vite, Tailwind CSS, Fabric.js
+- Backend: Node.js, Express, SQLite
+- 3D: Three.js / React Three Fiber
+
+## Getting Started
+
+### Frontend
+cd LevitoNest
+npm install
+npm run dev
+
+### Backend
+cd LevitoNest/backend/backend
+npm install
+node server.js
