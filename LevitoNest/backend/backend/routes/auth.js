@@ -104,4 +104,4 @@ router.get('/me', (req, res) => {
   }
 });
 
-module.exports = router;
+module.exports = router;// Auth routes: handles designer registration, login, and JWT session management
