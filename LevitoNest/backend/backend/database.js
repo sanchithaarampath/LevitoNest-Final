@@ -64,3 +64,13 @@ if (count.c === 0) {
 }
 
 module.exports = db;
+
+
+
+
+
+
+
+
+
+// Database configuration: initializes SQLite schema for rooms, designs, furniture, and users
