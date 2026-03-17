@@ -367,7 +367,7 @@ const View3D = ({ design, room, onClose }) => {
             <div
               className="w-4 h-4 rounded"
               style={{ backgroundColor: item.color || '#8B4513' }}
-            />
+            />// View3D: real-time 3D room visualization with Three.js, synchronized with 2D designer layout
             <span className="font-poppins text-xs text-gray-600">
               {item.furniture?.name}
             </span>
