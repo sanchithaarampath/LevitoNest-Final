@@ -4,7 +4,7 @@ import { getDesigns, getRooms, deleteDesign, deleteRoom } from '../api';
 import { Logo } from '../components/Navbar';
 import Designer from './Designer';
 
-const Dashboard = ({ designer, onLogout }) => {
+const Dashboard = ({ designer, onLogout, onGoHome }) => {
   const [designs, setDesigns] = useState([]);
   const [rooms, setRooms] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -83,6 +83,12 @@ const Dashboard = ({ designer, onLogout }) => {
           <span className="font-poppins text-gray-600 text-sm">
             Welcome, <span className="text-primary font-medium">{designer?.name}</span>
           </span>
+          <button
+            onClick={onGoHome}
+            className="px-4 py-2 bg-primary text-white rounded-full text-sm font-poppins hover:bg-opacity-90 transition-colors"
+          >
+            Home
+          </button>
           <button
             onClick={onLogout}
             className="px-4 py-2 border border-gray-200 rounded-full text-sm font-poppins hover:bg-gray-50 transition-colors"

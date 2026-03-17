@@ -1,4 +1,3 @@
-
 // Navbar: responsive navigation with authentication state and route handling
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -21,7 +20,7 @@ const Logo = () => (
   </div>
 );
 
-const Navbar = ({ onGetStarted }) => {
+const Navbar = ({ onGetStarted, designer, onLogout }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -57,11 +56,30 @@ const Navbar = ({ onGetStarted }) => {
               {link.name}
             </a>
           ))}
-          <button
-            onClick={onGetStarted}
-            className={`px-6 py-2.5 rounded-full font-medium transition-all duration-300 transform hover:scale-105 ${isScrolled ? 'bg-primary text-white shadow-lg shadow-primary/20 hover:bg-opacity-90' : 'bg-white text-darkText hover:bg-secondary'}`}>
-            Get Started
-          </button>
+
+          {designer ? (
+            <div className="flex items-center gap-3">
+              <span className={`text-sm font-medium ${isScrolled ? 'text-darkText' : 'text-white'}`}>
+                Hi, {designer.name}
+              </span>
+              <button
+                onClick={onGetStarted}
+                className={`px-6 py-2.5 rounded-full font-medium transition-all duration-300 transform hover:scale-105 ${isScrolled ? 'bg-primary text-white shadow-lg shadow-primary/20 hover:bg-opacity-90' : 'bg-white text-darkText hover:bg-secondary'}`}>
+                Dashboard
+              </button>
+              <button
+                onClick={onLogout}
+                className="px-6 py-2.5 rounded-full font-medium border border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300">
+                Logout
+              </button>
+            </div>
+          ) : (
+            <button
+              onClick={onGetStarted}
+              className={`px-6 py-2.5 rounded-full font-medium transition-all duration-300 transform hover:scale-105 ${isScrolled ? 'bg-primary text-white shadow-lg shadow-primary/20 hover:bg-opacity-90' : 'bg-white text-darkText hover:bg-secondary'}`}>
+              Get Started
+            </button>
+          )}
         </div>
 
         {/* Mobile Toggle */}
@@ -76,7 +94,6 @@ const Navbar = ({ onGetStarted }) => {
       </div>
 
       {/* Mobile Menu */}
-
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div 
@@ -96,11 +113,26 @@ const Navbar = ({ onGetStarted }) => {
                   {link.name}
                 </a>
               ))}
-              <button
-                onClick={onGetStarted}
-                className="bg-primary text-white py-3 rounded-xl font-medium mt-4">
-                Get Started
-              </button>
+              {designer ? (
+                <>
+                  <button
+                    onClick={onGetStarted}
+                    className="bg-primary text-white py-3 rounded-xl font-medium mt-4">
+                    Dashboard
+                  </button>
+                  <button
+                    onClick={onLogout}
+                    className="border border-primary text-primary py-3 rounded-xl font-medium">
+                    Logout
+                  </button>
+                </>
+              ) : (
+                <button
+                  onClick={onGetStarted}
+                  className="bg-primary text-white py-3 rounded-xl font-medium mt-4">
+                  Get Started
+                </button>
+              )}
             </div>
           </motion.div>
         )}

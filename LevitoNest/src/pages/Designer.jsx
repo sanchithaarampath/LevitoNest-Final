@@ -590,7 +590,7 @@ const handleExportImage = () => {
                         onClick={() => handleAddFurniture(item)}
                         className="w-full text-left px-3 py-2 rounded-xl hover:bg-primary hover:text-white transition-all duration-200 font-poppins text-sm text-gray-700 flex items-center justify-between group"
                       >
-                       // Designer: 2D canvas-based room designer with furniture placement, rotation, and color editing
+                       
                         <span>{item.name}</span>
                         <span className="text-xs text-gray-400 group-hover:text-white">
                           {item.default_width}×{item.default_height}

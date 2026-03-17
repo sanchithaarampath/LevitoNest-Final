@@ -19,7 +19,7 @@ function App() {
     const token = localStorage.getItem('token');
     if (stored && token) {
       setDesigner(JSON.parse(stored));
-      setCurrentPage('dashboard');
+      // Don't force dashboard - let them stay on home page
     }
   }, []);
 
@@ -44,18 +44,23 @@ function App() {
       <Dashboard
         designer={designer}
         onLogout={handleLogout}
+        onGoHome={() => setCurrentPage('home')}
       />
     );
   }
 
   return (
     <div className="min-h-screen bg-lightBg text-darkText">
-      <Navbar onGetStarted={() => setCurrentPage('login')} />
-      <Hero onExplore={() => setCurrentPage('login')} />
+      <Navbar 
+        onGetStarted={() => setCurrentPage(designer ? 'dashboard' : 'login')} 
+        designer={designer}
+        onLogout={handleLogout}
+      />
+      <Hero onExplore={() => setCurrentPage(designer ? 'dashboard' : 'login')} />
       <Features />
       <Gallery />
       <Templates />
-      <DesignerTool onStart={() => setCurrentPage('login')} />
+      <DesignerTool onStart={() => setCurrentPage(designer ? 'dashboard' : 'login')} />
       <Testimonials />
       <Footer />
     </div>
