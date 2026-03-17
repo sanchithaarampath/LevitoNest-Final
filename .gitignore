@@ -1,5 +1,7 @@
-node_modules/
+node_modules
 .env
-*.db
-dist/
-.vite/
+dist
+build
+backend/node_modules
+LevitoNest/node_modules
+LevitoNest/dist
