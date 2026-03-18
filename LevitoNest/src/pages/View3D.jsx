@@ -379,3 +379,10 @@ const View3D = ({ design, room, onClose }) => {
 };
 
 export default View3D;
+
+
+
+
+
+
+// Renders synchronized 3D furniture models based on 2D designer layout
